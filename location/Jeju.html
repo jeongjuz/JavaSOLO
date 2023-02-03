@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="Busan.css" rel="stylesheet" type="text/css" />
+<canvas id="canvas" width="100" height="100"
+style="background-color:--c;  padding-top: 35px;">
+</canvas>
+
+<script>
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+var radius = canvas.height / 2;
+ctx.translate(radius, radius);
+radius = radius * 0.90
+setInterval(drawClock, 1000);
+
+function drawClock() {
+  drawFace(ctx, radius);
+  drawNumbers(ctx, radius);
+  drawTime(ctx, radius);
+}
+
+function drawFace(ctx, radius) {
+  var grad;
+  ctx.beginPath();
+  ctx.arc(0, 0, radius, 0, 2*Math.PI);
+  ctx.fillStyle = 'white';
+  ctx.fill();
+  grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
+  grad.addColorStop(0, '#333');
+  grad.addColorStop(0.5, 'white');
+  grad.addColorStop(1, '#333');
+  ctx.strokeStyle = grad;
+  ctx.lineWidth = radius*0.1;
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
+  ctx.fillStyle = '#333';
+  ctx.fill();
+}
+
+function drawNumbers(ctx, radius) {
+  var ang;
+  var num;
+  ctx.font = radius*0.15 + "px arial";
+  ctx.textBaseline="middle";
+  ctx.textAlign="center";
+  for(num = 1; num < 13; num++){
+    ang = num * Math.PI / 6;
+    ctx.rotate(ang);
+    ctx.translate(0, -radius*0.85);
+    ctx.rotate(-ang);
+    ctx.fillText(num.toString(), 0, 0);
+    ctx.rotate(ang);
+    ctx.translate(0, radius*0.85);
+    ctx.rotate(-ang);
+  }
+}
+
+function drawTime(ctx, radius){
+    var now = new Date();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    //hour
+    hour=hour%12;
+    hour=(hour*Math.PI/6)+
+    (minute*Math.PI/(6*60))+
+    (second*Math.PI/(360*60));
+    drawHand(ctx, hour, radius*0.5, radius*0.07);
+    //minute
+    minute=(minute*Math.PI/30)+(second*Math.PI/(30*60));
+    drawHand(ctx, minute, radius*0.8, radius*0.07);
+    // second
+    second=(second*Math.PI/30);
+    drawHand(ctx, second, radius*0.9, radius*0.02);
+}
+
+function drawHand(ctx, pos, length, width) {
+    ctx.beginPath();
+    ctx.lineWidth = width;
+    ctx.lineCap = "round";
+    ctx.moveTo(0,0);
+    ctx.rotate(pos);
+    ctx.lineTo(0, -length);
+    ctx.stroke();
+    ctx.rotate(-pos);
+}
+</script>
+</body>
+</html>
+</head>
+<body>
+<header id="header">
+       
+        <nav id="nav-bar">
+            <ul id="ul-navbar">
+                <li><a class="nav-link" href="#ㅅ">사려니숲길</a></li>
+                <li><a class="nav-link" href="#ㅋ">큰엉해안경승지</a></li>
+                <li><a class="nav-link" href="#ㅎ">황우지해안</a></li>
+            </ul>
+        </nav>
+    </header>
+<div id="parallax-world-of-ugg">
+  
+<section>
+  <div class="title">
+    <h3>평화와 자연의 가치</h3>
+    <h1>제주</h1>
+  </div>
+</section>
+
+<section>
+    <div class="parallax-one" id="ㅅ">
+      <h2>사려니숲길</h2>
+    </div>
+</section>
+
+<section>
+  <div class="block">
+    <p><span class="first-character sc" >>ㅅ</span>사려니숲길은 비자림로의 봉개동 구간에서 제주시 조천읍 교래리의 물찻오름을 지나
+서귀포시 남원읍 한남리의 사려니오름까지 이어지는 숲길이다.
+총 길이는 약 15km이며 숲길 전체의 평균 고도는 550m이다.
+전형적인 온대성 산지대에 해당하는 숲길 양쪽을 따라 졸참나무, 서어나무, 때죽나무, 산딸나무, 편백나무, 삼나무 등
+다양한 수종이 자라는 울창한 자연림이 넓게 펼쳐져 있다.
+오소리와 제주족제비를 비롯한 포유류, 팔색조와 참매를 비롯한 조류, 쇠살모사를 비롯한 파충류 등 다양한 동물도 서식하고 있다.
+청정한 공기를 마시며 이 숲길을 걸으면 스트레스 해소에 좋고 장과 심폐 기능이 향상된다고 알려져 있어 많은 사람들이 찾는 명소이다.</p>
+    <p class="line-break margin-top-10" ></p>
+    <p class="margin-top-10">위치:제주특별자치도 제주시 조천읍 교래리 산 137-1<br/>문의:064-900-8800</p>
+  </div>
+</section>
+
+<section>
+  <div class="parallax-two" id="ㅋ">
+    <h2>큰엉해안경승지</h2>
+  </div>
+</section>
+
+<section>
+  <div class="block">
+    <p><span class="first-character ny">ㅋ</span> 큰엉이란 제주 방언으로 큰 언덕이란 뜻으로 제주의 바닷가 가운데서도 아름다운 절경을 이룬 곳으로 인정되어 자연문화유산 경승지로 지정되었다. 큰엉 해안경승지는 제주도 서귀포 동쪽으로 10km 정도의 거리에 있으며 약 1.5km에 이르는 해안가인데, 대부분 높은 절벽으로 이루어져 있다.
+     바다에 접한 곳에는 작은 바위섬들로 이루어져 파도가 치면 부서진 파도 거품으로 또 다른 아름다움을 느낄 수 있다.
+     높이 30m, 길이 200m의 기암절벽이 오랜세월 쉬지않고 밀려오는 파도를 감싸 안는 풍경을 보노라면 때묻지 않은 자연에 대한 감동을 느낄 수 있다. 갯바위 낚시터로, 조용한 휴식처로, 연인들의 데이트코스로 유명하다.</p>
+    <p class="line-break margin-top-10"></p>
+    <p class="margin-top-10">위치 :제주특별자치도 서귀포시 남원읍 태위로 522-17 큰엄전망대<br/>문의 :(+82) --</p>
+</section>
+
+<section>
+  <div class="parallax-three" id="ㅎ">
+    <h2>황우지해안</h2>
+  </div>
+</section>
+
+<section>
+  <div class="block">
+    <p><span class="first-character atw">ㅎ</span> 황우지해안은 제주도의 대표적인 관광 명소인 외돌개에서 도보로 5분이면 닿는 거리에 있다. 평소에도 수많은 관광객이 들락거리지만 검은 현무암이 요새처럼 둘러 쳐진 황우지해안은 마음먹고 찾지 않는 이상 쉽게 눈에 띄지 않는다. 
+    올레 7코스 시작점 표식 사이로 난 길을 따라 내려가면 황우지해안 전적비가 서 있는 바닷가 절벽에 닿는다.
+     황우지해안은 완만한 만 형태를 이루고 있고, 중간에 돌기둥처럼 선 바위섬이 파도를 막아주고 있는 형태다. 암석 아래쪽으로 바닷물이 순환되면서 맑은 물이 유지되어 여러모로 물놀이를 즐기기 좋은 환경을 갖추고 있다. 이런 환경 덕분에 황우지해안이 스노쿨링 하기 좋은 장소로 알려지면서 해마다 많은 사람들이 물놀이를 하기 위해 찾고 있다.
+      외돌개를 중심으로 한 산책로 조성도 잘 되어 있어서 피서를 보내기 좋은 여건을 갖추고 있다.</p>
+    <p class="line-break margin-top-10"></p>
+    <p class="margin-top-10">위치 :제주특별자치도 서귀포시 서홍동 766-1 <br/>문의 : 064-760-4601</p>
+  </div>
+</section>
+  
+</div>
+</body>
+</html>
+

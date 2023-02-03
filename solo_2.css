@@ -1,0 +1,510 @@
+@charset "utf-8";
+:root {
+  --light-blue: rgb(130, 205, 206);
+  --dark-grey :  rgb(79, 79, 79)  ;
+}
+
+html {
+  font-family: 'Source Sans Pro', sans-serif;
+  text-align: center;
+}
+
+p{
+  text-align: justify;
+  margin: 0;
+}
+
+a{
+  color: var(--light-blue);
+}
+
+#nav-bar a{
+  display: block;
+  color:  var(--dark-grey);
+  text-decoration: none;
+  cursor: pointer;
+  padding: 12px;
+}
+
+#nav-bar  a:hover{
+  font-weight: bold;
+  color: white;
+  background-color: var(--dark-grey);
+}
+
+#header{
+  display: flex;
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  background-color: white;
+  width: 100vw;
+  max-width:100%; /* So that navbar isn't larger than screen*/
+  box-shadow: 0px 0px 5px rgba(82, 82, 82, 0.338);
+}
+
+header{
+  font-family: 'Noto Sans', sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.section-title{
+  color: rgb(70, 187, 200);
+  font-size: 1.25rem;
+  font-weight: bold;
+  transform: translate(0px, 12px);
+  background-color: white;
+  display: inline-block;
+  padding: 0 0.5rem;
+  letter-spacing: 0.1em;
+  text-shadow: 0.1em 0.1em 0 rgba(0, 0, 0, 0.1);
+}
+
+article, form{
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding-top: 2.5rem;
+}
+
+#nav-bar{
+  font-size: 0.8rem;
+  /* justify-self: flex-end; */
+  margin-left: auto;
+
+}
+
+#header-img{
+  height: 30px; 
+  margin-top: 6px; 
+
+}
+
+#ul-navbar{
+  display: flex;
+  margin: 0px;
+  /* Remove bullet and indentation disappear */
+  list-style: none;
+  padding-left: 0; 
+  overflow: auto;
+}
+
+#title{
+  text-transform: uppercase;
+  color: var(--dark-grey);
+  text-align: center;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 3.5em;
+  letter-spacing: 0.1em;
+  display: block;
+  font-style:normal;
+  padding-top: 0.1em;
+  text-shadow: 0.07em 0.07em 0 rgba(0, 0, 0, 0.1);
+  margin: 0;
+  padding: 0;
+}
+
+#title::before,
+#title::after{
+  font-family: 'EB Garamond', serif;
+  content: "§";
+  display: inline-block;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  opacity: 0.4;
+  margin: 0 0.6em;
+  font-size: 0.5em;
+}
+
+body{
+  background-image: url(./images/독립문.png);
+  background-repeat: no-repeat;
+  background-size: 100vw auto;
+  margin: 0;
+  background-position: 0 25px; 
+}
+
+#main-doc{
+  max-width: 850px;
+  margin: auto;
+  padding: calc((100vw / 1.5)) 15px 15px 15px ;
+}
+
+.main-section{
+  padding-top: 40px;
+}
+
+#about-pt{
+  text-indent: 2em; 
+  line-height: 150%;
+}
+#pt-summary{
+  display: flex;
+  justify-content: space-between;
+  /* background-color: var(--lightest-blue); */
+  font-family: 'Noto Sans', sans-serif;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+
+
+}
+
+.box-shadow{
+  margin-top: 1.5rem;
+  position:relative;
+  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1) inset;
+  background-color: var(--light-blue);
+  border-radius:5px;
+  padding: 10px;
+  margin-top: 25px;
+}
+
+.box-shadow #pt-summary{
+
+  padding: 8px;
+  border:2px dashed #F7EEEE;
+  border-radius:5px;
+}
+.box-shadow:before, .box-shadow:after{
+  position:absolute;
+  content:"";
+  top:14px;bottom:14px;left:0;right:0;
+  box-shadow:0 0 25px 3px rgb(160, 160, 160);
+  border-radius:100px/10px;
+  z-index:-1;
+}
+
+#ul-summary{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(3, 1fr); 
+  /* Remove bullet and indentation disappear */
+  list-style: none;
+  padding-left: 0; 
+  align-items: center;
+}
+
+.li-summary{
+  display: flex;
+  align-items: center;
+}
+
+.bullet-text{
+  padding: 10px;
+  letter-spacing: 0.1em;
+}
+
+.bullet-image{
+  height:50px;
+  width: 50px;
+  background-size: auto 100%;
+  margin-left: 10px;
+}
+
+#history{
+  background-image: url(https://image.flaticon.com/icons/svg/859/859170.svg);
+}
+#beaches{
+  background-image: url(https://image.flaticon.com/icons/svg/452/452892.svg);
+}
+#food{
+  background-image: url(https://image.flaticon.com/icons/svg/325/325562.svg);
+}
+
+#trailer{
+  margin: auto;
+}
+#video{
+  width: 520.8px; 
+  height: 292.95px;
+}
+
+.terr-all{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+
+.terr-each{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 30%;
+}
+
+
+.terr-image{
+  height:105px;
+  width: 105px;
+  background-size: auto 100%;
+  border-radius: 50%;
+  border: 2px solid var(--dark-grey);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);  
+}
+
+.type{
+  line-height: 150%;
+  padding-bottom: 15px;
+}
+
+#type-1{
+  background-image: url(https://t1.daumcdn.net/cfile/tistory/99C9313D5D147BCD28);
+  background-position-x: -25px;
+}
+#type-2{
+  background-image: url(https://health.chosun.com/site/data/img_dir/2022/07/21/2022072102113_0.jpg);
+  background-position: center;
+}
+#type-3{
+  background-image: url(https://post-phinf.pstatic.net/MjAyMDA4MDRfMjU4/MDAxNTk2NTA2NTA1MDQw.UfrhCaJ_krJpiFfsIzPeoK5hjr_eEaYb9w1UHWJR3xAg.cxk5TtXzv3idh_UYtoPnE7lLFbq8uEFYzS9vsh457H8g.JPEG/Danyang_Beautiful_Flight.jpg?type=w1200);
+  background-position-x: -27px;
+} 
+
+
+#pt-continental:hover{
+  background-image: url(https://media.istockphoto.com/photos/bridge-25-de-abril-at-night-lisboa-picture-id469488120?k=6&m=469488120&s=612x612&w=0&h=5fnT-nO-6xuvazge7lwHi_PhU8Pd1LHAzBIQ_-gP3ik=);
+  background-position-x: -45px;
+}
+#pt-madeira:hover{
+  background-image: url(http://www.viajediario.com/wp-content/uploads/madeira_casas_tipicas_santana_pueblo_fotos_9.jpg);
+  background-position-x: -68px;
+}
+#pt-azores:hover{
+  background-image: url(http://www.amaieurope.org/2011/imagens/Madalena_-__Pico.jpg);
+  background-position-x: -45px;
+  background-position-y: -10px;
+  background-size: auto 120%;
+} 
+
+#visit{
+  background-color: var(--light-blue);
+  width: 105px;
+  border: none;
+  border-radius: 2px;
+  padding: 12px 16px;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;  
+  bottom: 0px;
+  margin-top: auto;
+
+}
+
+#visit:hover,
+#submit:hover{
+  /* background-color: rgb(186, 232, 154); */
+  background-color: rgb(45, 187, 195);
+  box-shadow: 2px 2px 2px rgb(186, 186, 186);
+  cursor: pointer;    /* Para corrigir problema de cursor mão/seta */
+}
+
+.dest-all{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  margin-top: 15px;
+}
+
+.dest-each{
+  padding: 2px 2px;
+  background-attachment: fixed;
+}
+
+.dest-image{
+  height: 15vw;
+  max-height: 170px;
+  background-size: 100%;
+  background-position: center;
+  display: flex;
+}
+
+.dest-image:hover{
+  -webkit-filter: contrast(1.4) saturate(1.8) sepia(.6);
+  filter: contrast(1.2) saturate(1.2) sepia(.3);
+}
+
+.dest-title{
+  color: white;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  text-align: center;
+  vertical-align: center;
+  z-index: 2;
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0.2s linear, opacity 0.2s linear, transform 0.4s linear;
+  letter-spacing: 0.2em;
+  margin: auto;
+  text-shadow: 0 0 5px rgb(0, 0, 0), 2px 2px 5px rgb(0, 0, 0), -1px -1px 5px rgb(0, 0, 0);
+}
+
+.dest-image:hover .dest-title{
+  visibility: hidden;
+  opacity: 0;
+  transition-delay:0s;
+  transform: translate(0px, -50px);
+}
+
+#Tongyeong{
+  background-image: url(http://cdn.ancnews.kr/news/photo/201910/7978_6703_30.jpg);
+  background-size: auto 100%;
+}
+#Namhae{
+  background-image: url(http://www.boriam.or.kr/layouts/default/image/01/01_i01.jpg);
+}
+#Sacheon{
+  background-image: url(http://www.gndomin.com/news/photo/202104/273523_268216_4004.jpg);
+}
+#Jecheon{
+  background-image: url(https://www.inews365.com/data/photos/20201145/art_16042846973849.jpg);
+}
+#Jeju{
+  background-image: url(https://scontent-ssn1-1.xx.fbcdn.net/v/t1.6435-9/171421717_3061278654158316_4132101422362019741_n.jpg?stp=dst-jpg_p960x960&_nc_cat=101&ccb=1-7&_nc_sid=36a2c1&_nc_ohc=_TnTX2u8tnUAX_wzD5v&_nc_ht=scontent-ssn1-1.xx&oh=00_AT8lBytx0og7meL5kqBZiDu0Cl3dZuGf4PiCSzpd2f-cUA&oe=6357C64A);
+  background-size: auto 100% ;
+}
+#Busan{
+  background-image: url(https://img.medicalreport.kr/resources/2019/01/31/M2CTrw2bxLVxULfc.jpg);
+  background-size: 115% auto ;
+}
+
+#email-label{
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  font-size: 1.2rem;
+  max-width: 500px;
+}
+
+input[type=email]{
+  height: 23px; 
+  width: 250px;
+  border: 1px solid #c0c0c0;
+  border-radius: 2px;
+  padding: 5px; 
+  margin-top: 15px;
+}
+
+input:invalid{
+  border: 1px solid var(--light-blue);
+}
+
+#form{
+  margin-bottom: 30px;
+}
+
+#submit{
+  vertical-align: bottom; /* To align input field and submit button */
+  background-color: var(--light-blue);
+  height: 35px;
+  border: none;
+  border-radius: 2px;
+  padding: 0px 15px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+footer{
+  font-size: 0.8rem;
+  margin: auto;
+  padding: 1rem 0.2rem;
+  color: white;
+  background-color: rgb(31, 31, 31);
+}
+
+
+@media (min-width: 850px){
+  body{
+    background-size: 850px  auto;
+    background-position-x: center;
+  }
+  #main-doc{
+    padding: 579.2px 15px 15px 15px ;
+  }
+}
+
+@media (max-width: 820px){
+  #pt-summary{
+    flex-direction: column;
+  }
+  #ul-summary{
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr); 
+  }
+  .li-summary{
+
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 595px){
+  body{
+    background-position-y: 145px;
+  }
+
+  #title{
+    font-size: 2.5em;
+  }
+  #header{
+    flex-direction: column;
+    position: static;
+  }
+  #nav-bar{
+    margin: auto;
+    width: 100vw;
+  }
+  .main-section{
+    padding-top: 10px;
+  }
+
+  #ul-navbar{
+    flex-direction: column;
+  }
+  #trailer{
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 */
+    }
+    
+  #trailer iframe,
+  #trailer video {
+    position: absolute;
+    width: 100%;
+    height: 100%; 
+    left: 0; 
+  }
+  
+  #nav-bar a{
+    padding: 5px;
+  }
+  #main-doc{
+    padding: calc((100vw / 1.5) ) 15px 15px 15px;
+  }
+  .terr-all{
+    flex-direction: column;
+  }
+  .terr-each{
+    width: 100%;
+    padding-bottom: 50px;
+  }
+  .dest-all{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+  }
+    
+  .dest-image{
+    height: 30vw;
+    background-size:  100% auto;
+  }
+  #funchal{
+    background-size:  100% auto;
+  }
+}

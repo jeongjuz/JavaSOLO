@@ -1,0 +1,83 @@
+@charset "UTF-8";
+body {
+  background: #a2a2a2;
+}
+
+.photogallery {
+  background: whitesmoke;
+  display: -webkit-flex;
+  display: flex;
+  height: 500px;
+  margin: 90px auto;
+  width: 100%;
+  max-width: 750px;
+}
+.photogallery menu {
+  background: whitesmoke;
+  border-right: 2px solid lightgrey;
+  box-shadow: 5px 1px 5px lightgrey;
+  display: inline-block;
+  margin: 0;
+  overflow: hidden;
+  padding: 30px 15px;
+  width: 10%;
+}
+.photogallery menu ul {
+  list-style-type: none;
+  height: 100%;
+  margin: 12px;
+  padding: 0;
+  overflow-y: auto;
+}
+.photogallery menu ul li {
+  height: 40px;
+  margin-bottom: 16px;
+  width: 100%;
+  overflow: hidden;
+}
+.photogallery menu ul li img {
+  opacity: 0.3;
+}
+.photogallery menu ul li img.activeImage {
+  opacity: 1;
+}
+.photogallery menu ul li img:hover {
+  cursor: pointer;
+}
+.photogallery menu ul li span {
+  display: none;
+}
+.photogallery section {
+  display: inline-block;
+  -webkit-flex: 1;
+  /* Safari 6.1+ */
+  -ms-flex: 1;
+  /* IE 10 */
+  flex: 1;
+  margin: 30px 15px;
+  width: 45%;
+  vertical-align: top;
+}
+.photogallery section .galleryimage {
+  display: block;
+  max-height: 90%;
+  margin: auto;
+}
+.photogallery section .gallerydescription {
+  padding: 16px;
+}
+.photogallery img {
+  max-width: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  /* remove scrollbar space */
+  background: transparent;
+  /* optional: just make scrollbar invisible */
+}
+
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #FF0000;
+}

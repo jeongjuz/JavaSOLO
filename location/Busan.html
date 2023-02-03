@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="Jeju.css" rel="stylesheet" type="text/css" />
+<script src="../../4_jquery_class/lib/jquery-3.1.1.min.js"></script>
+<canvas id="canvas" width="100" height="100"
+style="background-color:--c;  padding-top: 35px";>
+</canvas>
+
+<script>
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+var radius = canvas.height / 2;
+ctx.translate(radius, radius);
+radius = radius * 0.90
+setInterval(drawClock, 1000);
+
+function drawClock() {
+  drawFace(ctx, radius);
+  drawNumbers(ctx, radius);
+  drawTime(ctx, radius);
+}
+
+function drawFace(ctx, radius) {
+  var grad;
+  ctx.beginPath();
+  ctx.arc(0, 0, radius, 0, 2*Math.PI);
+  ctx.fillStyle = 'white';
+  ctx.fill();
+  grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
+  grad.addColorStop(0, '#333');
+  grad.addColorStop(0.5, 'white');
+  grad.addColorStop(1, '#333');
+  ctx.strokeStyle = grad;
+  ctx.lineWidth = radius*0.1;
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
+  ctx.fillStyle = '#333';
+  ctx.fill();
+}
+
+function drawNumbers(ctx, radius) {
+  var ang;
+  var num;
+  ctx.font = radius*0.15 + "px arial";
+  ctx.textBaseline="middle";
+  ctx.textAlign="center";
+  for(num = 1; num < 13; num++){
+    ang = num * Math.PI / 6;
+    ctx.rotate(ang);
+    ctx.translate(0, -radius*0.85);
+    ctx.rotate(-ang);
+    ctx.fillText(num.toString(), 0, 0);
+    ctx.rotate(ang);
+    ctx.translate(0, radius*0.85);
+    ctx.rotate(-ang);
+  }
+}
+
+function drawTime(ctx, radius){
+    var now = new Date();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    //hour
+    hour=hour%12;
+    hour=(hour*Math.PI/6)+
+    (minute*Math.PI/(6*60))+
+    (second*Math.PI/(360*60));
+    drawHand(ctx, hour, radius*0.5, radius*0.07);
+    //minute
+    minute=(minute*Math.PI/30)+(second*Math.PI/(30*60));
+    drawHand(ctx, minute, radius*0.8, radius*0.07);
+    // second
+    second=(second*Math.PI/30);
+    drawHand(ctx, second, radius*0.9, radius*0.02);
+}
+
+function drawHand(ctx, pos, length, width) {
+    ctx.beginPath();
+    ctx.lineWidth = width;
+    ctx.lineCap = "round";
+    ctx.moveTo(0,0);
+    ctx.rotate(pos);
+    ctx.lineTo(0, -length);
+    ctx.stroke();
+    ctx.rotate(-pos);
+}
+</script>
+</body>
+</html>
+</head>
+<body>
+<header id="header">
+       
+        <nav id="nav-bar">
+            <ul id="ul-navbar">
+                <li><a class="nav-link" href="#ㅌ">태종대</a></li>
+                <li><a class="nav-link" href="#ㅎ">흰여울문화마을</a></li>
+                <li><a class="nav-link" href="#ㅈ">장림포구</a></li>
+            </ul>
+        </nav>
+    </header>
+<div id="parallax-world-of-ugg">
+  
+<section>
+  <div class="title">
+    <h3>대한민국의 제2의 도시</h3>
+    <h1>부산</h1>
+  </div>
+</section>
+
+<section>
+    <div class="parallax-one" id="ㅌ">
+      <h2>태종대</h2>
+    </div>
+</section>
+
+<section>
+  <div class="block">
+    <p><span class="first-character sc" >>ㅌ</span>신라 태종 무열왕이 들러서 활쏘기를 하고 연회를 개최했다는 태종대는 기암괴석과 함께 울창한 숲으로 이뤄져 있으며
+            남해 바다를 구경할 수 있어 자연경관을 감상할 수 있는 곳이다.절벽을 오르는 것이 결코 쉽지는 않지만 
+            다누비열차를 탄다면 수월하게 올라갈 수 있다. 등대까지 이어진 태종대 일주도로는 특히 데이트코스로 제격이다.</p>
+    <p class="line-break margin-top-10" ></p>
+    <p class="margin-top-10">위치: 부산광역시 영도구 태종대유원지 입구<br/>문의:051-403-4685</p>
+  </div>
+</section>
+
+<section>
+  <div class="parallax-two" id="ㅎ">
+    <h2>흰여울문화마을</h2>
+  </div>
+</section>
+
+<section>
+  <div class="block">
+    <p><span class="first-character ny">H</span> 흰여울문화마을은 ‘변호인’, ‘범죄와의 전쟁’ 등 다양한 영화가 촬영된 곳이기도 한 이 곳은 감천문화마을처럼 관광지가 된 곳이다.
+             가파른 절벽위에 형성된 마을의 분위기가 제법 독특한데, 바다를 마주하고 있어 색다른 느낌이 드는 곳이다.
+             마을을 구경하고 난 후에는 해안산책로에 내려가서 바다를 바라보면서 산책을 나설 수도 있다.</p>
+    <p class="line-break margin-top-10"></p>
+    <p class="margin-top-10">위치 :부산광역시 영도구 영선동4가 605-3<br/>문의 :051-403-1863</p>
+</section>
+
+<section>
+  <div class="parallax-three" id="ㅈ">
+    <h2>장림포구</h2>
+  </div>
+</section>
+
+<section>
+  <div class="block">
+    <p><span class="first-character atw">ㅈ</span> 장림포구 에 위치한 이탈리아의 베네치아를 닮은 이 곳은 섬과 섬 사이의 수로가 주요 교통로이고, 수로 양옆에 다닥다닥 붙어 있는 알록달록한 건물들이 인상적인 시가지예요. 
+            그런데 부산에도 베네치아의 모습을 똑닮아 일명 부네치아(부산의 베네치아)라 불리는 곳이 있어요. 바로 사하구에 자리한 장림포구.
+            시원한 바람 맞으며 이탈리아 베네치아는 못 가더라도 가까운 장림포구 부네치아에서 시원한 음료 하나 마시는 것도 낭만적일 것 같아요.</p>
+    <p class="line-break margin-top-10"></p>
+    <p class="margin-top-10">위치 :부산광역시 사하구 장림로93번길 72(장림동) 일원 <br/>문의 : 051-220-4502</p>
+  </div>
+</section>
+  
+</div>
+</body>
+</html>
+
